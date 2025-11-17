@@ -15,6 +15,7 @@ public:
 
 	void initZhCn();
 	void initEn();
+	void initKo();
 private:
 
 	QHash<QString, QString> dic;
