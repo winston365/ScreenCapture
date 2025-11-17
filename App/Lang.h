@@ -11,10 +11,8 @@ public:
 	Lang(QObject *parent);
 	~Lang();
 	static QString get(const QString& name);
-	static void init(const QString& langType="ZhCn");
+	static void init();
 
-	void initZhCn();
-	void initEn();
 	void initKo();
 private:
 
