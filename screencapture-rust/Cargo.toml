@@ -1,0 +1,44 @@
+[package]
+name = "screencapture-rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["ScreenCapture Rust Team"]
+description = "A high-performance screen capture and annotation tool written in Rust"
+
+[dependencies]
+# GUI Framework
+eframe = "0.30"
+egui = "0.30"
+egui_extras = "0.30"
+
+# Windows API
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+    "Win32_System_DataExchange",
+    "Win32_UI_Input_KeyboardAndMouse",
+] }
+
+# Image processing
+image = "0.25"
+
+# Clipboard
+arboard = "3.4"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Date/Time
+chrono = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[build-dependencies]
+winres = "0.1"
